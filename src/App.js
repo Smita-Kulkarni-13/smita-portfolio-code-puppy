@@ -1,23 +1,46 @@
-import logo from './logo.svg';
+import React from 'react';
+import {
+  motion,
+  useScroll,
+  useSpring
+} from 'framer-motion';
+import Navigation from './components/Navigation';
+import Hero from './components/Hero';
+import WorkExperience from './components/WorkExperience';
+import AcademicProjects from './components/AcademicProjects';
+import Contact from './components/Contact';
 import './App.css';
 
 function App() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <motion.div
+        className="progress-bar"
+        style={{ scaleX }}
+      />
+      <Navigation />
+      <Hero />
+      <WorkExperience />
+      <AcademicProjects />
+      <Contact />
+      
+      <footer className="footer">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
         >
-          Learn React
-        </a>
-      </header>
+          <p>© 2024 Smita Kulkarni. Built with ❤️ and React</p>
+        </motion.div>
+      </footer>
     </div>
   );
 }
