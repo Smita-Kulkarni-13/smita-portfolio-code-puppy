@@ -98,7 +98,7 @@ const Contact = () => {
           variants={itemVariants}
           style={{
             fontSize: '1.2rem',
-            color: '#e0e0e0',
+            color: '#333',
             marginBottom: '3rem',
             maxWidth: '600px',
             margin: '0 auto 3rem auto',
@@ -232,7 +232,7 @@ const Contact = () => {
               LinkedIn
             </h3>
             <motion.a
-              href="https://linkedin.com/in/smitakulkarni-13"
+              href="https://linkedin.com/in/smita-kulkarni-239b51124"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
@@ -244,7 +244,7 @@ const Contact = () => {
                 borderBottom: '1px solid rgba(102, 126, 234, 0.3)'
               }}
             >
-              linkedin.com/in/smitakulkarni-13
+              LinkedIn
             </motion.a>
           </motion.div>
         </motion.div>

@@ -227,7 +227,7 @@ const Hero = () => {
             <span>📧</span> smitask244@gmail.com
           </motion.a>
           <motion.a
-            href="https://linkedin.com/in/smitakulkarni-13"
+            href="https://linkedin.com/in/smita-kulkarni-239b51124"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }}
