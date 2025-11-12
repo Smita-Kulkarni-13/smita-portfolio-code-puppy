@@ -12,7 +12,10 @@ const AcademicProjects = () => {
       detailedDescription: "This project involved comprehensive data analysis of wildfire patterns across multiple regions, using advanced statistical methods and machine learning to predict future occurrences and optimize resource allocation.",
       tools: ["Python", "Geospatial Visualization", "Predictive Modeling", "Data Analysis"],
       university: "University of Washington",
-      program: "Business Analytics June 2024 - June 2025"
+      program: "Business Analytics June 2024 - June 2025",
+      links: [
+        { type: "Medium Article", url: "https://medium.com/@smitask244/burning-insights-how-data-reveals-the-future-of-wildfires-c56a0ff2f83d" }
+      ]
     },
     {
       id: 2,
@@ -21,16 +24,22 @@ const AcademicProjects = () => {
       detailedDescription: "Large-scale analysis of e-commerce transaction data to identify meaningful patterns in customer purchasing behavior, enabling data-driven inventory and marketing decisions.",
       tools: ["Python", "Apriori Algorithm", "Machine Learning", "mlxtend", "RFM Analysis"],
       university: "University of Washington",
-      program: "Business Analytics June 2024 - June 2025"
+      program: "Business Analytics June 2024 - June 2025",
+      links: [
+        { type: "Medium Article", url: "https://medium.com/@smitask244/cracking-the-code-of-customer-behavior-our-dive-into-olists-data-2d25b877da54" }
+      ]
     },
     {
       id: 3,
       title: "Cracking the Enchantment Lottery",
       description: "Developed an interactive Tableau dashboard analyzing the Enchantments Wilderness Permit Lottery, visualizing success rates by date, zone, and group size to inform strategic planning for outdoor enthusiasts.",
       detailedDescription: "Created sophisticated visualizations and statistical analyses of wilderness permit lottery data to help outdoor enthusiasts optimize their application strategies.",
-      tools: ["Tableau", "Data Visualization", " Statistical Analysis", "Dashboard Development"],
+      tools: ["Tableau", "Data Visualization", "Statistical Analysis", "Dashboard Development"],
       university: "University of Washington",
-      program: "Business Analytics June 2024 - June 2025"
+      program: "Business Analytics June 2024 - June 2025",
+      links: [
+        { type: "Tableau Dashboard", url: "https://public.tableau.com/app/profile/smita.sanjeev.kulkarni/viz/EnchantmentLotteryChances/Story1?publish=yes" }
+      ]
     },
     {
       id: 4,
@@ -39,7 +48,10 @@ const AcademicProjects = () => {
       detailedDescription: "Advanced time series forecasting project using econometric modeling to predict future meat consumption patterns based on multiple economic and demographic factors.",
       tools: ["SARIMAX", "Time Series Analysis", "R", "Econometric Modeling", "Forecasting"],
       university: "University of Washington",
-      program: "Business Analytics June 2024 - June 2025"
+      program: "Business Analytics June 2024 - June 2025",
+      links: [
+        { type: "Medium Article", url: "https://medium.com/@smitask244/forecasting-the-future-of-meat-in-america-how-we-used-time-series-modeling-to-predict-protein-b3aba64b4a16" }
+      ]
     },
     {
       id: 5,
@@ -48,7 +60,10 @@ const AcademicProjects = () => {
       detailedDescription: "High-pressure case competition requiring rapid analysis and strategic thinking to solve complex business challenges for a global shipping giant.",
       tools: ["Strategic Analysis", "Data Analytics", "Presentation Skills", "Business Intelligence"],
       university: "University of Washington",
-      program: "Business Analytics June 2024 - June 2025"
+      program: "Business Analytics June 2024 - June 2025",
+      links: [
+        { type: "Case Report", url: "https://drive.google.com/file/d/1AY35kFh04BleJk48OMjwpg8D1U6WQwE1/view?usp=drive_link" }
+      ]
     },
     {
       id: 6,
@@ -223,6 +238,45 @@ const AcademicProjects = () => {
               >
                 {expandedProject === project.id ? project.detailedDescription : project.description}
               </p>
+
+              {/* Project Links */}
+              {project.links && project.links.length > 0 && (
+                <div
+                  style={{
+                    marginTop: '1rem',
+                    display: 'flex',
+                    gap: '0.5rem',
+                    flexWrap: 'wrap'
+                  }}
+                >
+                  {project.links.map((link, linkIndex) => (
+                    <motion.a
+                      key={linkIndex}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '0.3rem',
+                        padding: '0.4rem 0.8rem',
+                        background: 'rgba(102, 126, 234, 0.1)',
+                        border: '1px solid rgba(102, 126, 234, 0.3)',
+                        borderRadius: '15px',
+                        fontSize: '0.8rem',
+                        color: '#667eea',
+                        textDecoration: 'none',
+                        fontWeight: '500'
+                      }}
+                    >
+                      <span>{link.type === 'Tableau Dashboard' ? '📊' : link.type === 'Medium Article' ? '📝' : link.type === 'Case Report' ? '📄' : '🔗'}</span>
+                      {link.type}
+                    </motion.a>
+                  ))}
+                </div>
+              )}
 
               {/* Tools */}
               <div
