@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/smita-portfolio-code-puppy/static/css/main.2965edda.css",
+    "main.js": "/smita-portfolio-code-puppy/static/js/main.68d80445.js",
+    "static/js/453.bca1a7ed.chunk.js": "/smita-portfolio-code-puppy/static/js/453.bca1a7ed.chunk.js",
+    "index.html": "/smita-portfolio-code-puppy/index.html",
+    "main.2965edda.css.map": "/smita-portfolio-code-puppy/static/css/main.2965edda.css.map",
+    "main.68d80445.js.map": "/smita-portfolio-code-puppy/static/js/main.68d80445.js.map",
+    "453.bca1a7ed.chunk.js.map": "/smita-portfolio-code-puppy/static/js/453.bca1a7ed.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2965edda.css",
+    "static/js/main.68d80445.js"
+  ]
+}
