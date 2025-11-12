@@ -60,7 +60,10 @@ const AcademicProjects = () => {
       detailedDescription: "High-pressure case competition requiring rapid analysis and strategic thinking to solve complex business challenges for a global shipping giant.",
       tools: ["Strategic Analysis", "Data Analytics", "Presentation Skills", "Business Intelligence"],
       university: "University of Washington",
-      program: "Business Analytics June 2024 - June 2025"
+      program: "Business Analytics June 2024 - June 2025",
+      links: [
+        { type: "Case Report", url: "https://drive.google.com/file/d/1Jiv4JDKEN1QRN_YsD59zGgBlvy7Mhb9x/view?usp=drive_link" }
+      ]
     },
     {
       id: 6,
@@ -164,6 +167,40 @@ const AcademicProjects = () => {
             University of Washington
           </h3>
           <p>Business Analytics • June 2024 - June 2025</p>
+        </motion.div>
+        
+        {/* Resume Link */}
+        <motion.div
+          variants={itemVariants}
+          style={{
+            textAlign: 'center',
+            marginTop: '2rem',
+            marginBottom: '3rem'
+          }}
+        >
+          <motion.a
+            href="https://drive.google.com/file/d/1AY35kFh04BleJk48OMjwpg8D1U6WQwE1/view?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              padding: '0.8rem 1.5rem',
+              background: 'linear-gradient(135deg, #667eea, #764ba2)',
+              color: 'white',
+              textDecoration: 'none',
+              fontSize: '1.1rem',
+              fontWeight: '600',
+              borderRadius: '25px',
+              boxShadow: '0 5px 20px rgba(102, 126, 234, 0.3)'
+            }}
+          >
+            <span>📄</span>
+            View My Resume
+          </motion.a>
         </motion.div>
 
         {/* Projects Grid */}
