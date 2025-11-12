@@ -69,7 +69,10 @@ const AcademicProjects = () => {
       detailedDescription: "Comprehensive analysis of pricing strategies and demand patterns in the consumer goods industry using advanced statistical techniques.",
       tools: ["R", "Log-Linear Regression", "ROI Modeling", "PCA", "Excel Simulation"],
       university: "University of Washington",
-      program: "Business Analytics June 2024 - June 2025"
+      program: "Business Analytics June 2024 - June 2025",
+      links: [
+        { type: "Project Report", url: "https://drive.google.com/file/d/1Jiv4JDKEN1QRN_YsD59zGgBlvy7Mhb9x/view?usp=drive_link" }
+      ]
     },
     {
       id: 7,
@@ -78,8 +81,11 @@ const AcademicProjects = () => {
       detailedDescription: "Machine learning project focused on predicting and optimizing digital advertising performance through sophisticated algorithmic approaches.",
       tools: ["R", "CART", "XGBoost", "AUC", "ROC Analysis", "ROI Modeling"],
       university: "University of Washington",
-      program: "Business Analytics June 2024 - June 2025"
-    }
+      program: "Business Analytics June 2024 - June 2025",
+      links: [
+        { type: "Project Analysis", url: "https://docs.google.com/document/d/1asKjPdBzrolxoJtxOvSs222E2gTs8vHo/edit?usp=drive_link&ouid=111449420635285988397&rtpof=true&sd=true" }
+      ]
+    },
   ];
 
   const containerVariants = {
@@ -268,7 +274,7 @@ const AcademicProjects = () => {
                         fontWeight: '500'
                       }}
                     >
-                      <span>{link.type === 'Tableau Dashboard' ? '📊' : link.type === 'Medium Article' ? '📝' : link.type === 'Case Report' ? '📄' : '🔗'}</span>
+                      <span>{link.type === 'Tableau Dashboard' ? '📊' : link.type === 'Medium Article' ? '📝' : (link.type === 'Case Report' || link.type === 'Project Report' || link.type === 'Project Analysis') ? '📄' : '🔗'}</span>
                       {link.type}
                     </motion.a>
                   ))}
