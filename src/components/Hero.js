@@ -224,7 +224,25 @@ const Hero = () => {
               borderBottom: '1px solid rgba(255, 255, 255, 0.3)'
             }}
           >
-            <span>✉️</span> smitask244@gmail.com
+            <span>📧</span> smitask244@gmail.com
+          </motion.a>
+          <motion.a
+            href="https://linkedin.com/in/smitakulkarni-13"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            style={{
+              color: '#ffffff',
+              textDecoration: 'none',
+              fontWeight: '500',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              borderBottom: '1px solid rgba(255, 255, 255, 0.3)'
+            }}
+          >
+            <span>💼</span> LinkedIn
           </motion.a>
         </motion.div>
       </motion.div>

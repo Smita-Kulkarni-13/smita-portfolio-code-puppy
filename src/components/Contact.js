@@ -219,7 +219,7 @@ const Contact = () => {
                 marginBottom: '1rem'
               }}
             >
-              🔗
+              💼
             </div>
             <h3
               style={{
@@ -232,18 +232,19 @@ const Contact = () => {
               LinkedIn
             </h3>
             <motion.a
-              href="https://linkedin.com/in/smitakulkarni"
+              href="https://linkedin.com/in/smitakulkarni-13"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               style={{
-                color: '#555',
+                color: '#667eea',
                 textDecoration: 'none',
-                fontSize: '1.1rem'
+                fontSize: '1.1rem',
+                borderBottom: '1px solid rgba(102, 126, 234, 0.3)'
               }}
             >
-              Connect with me
+              linkedin.com/in/smitakulkarni-13
             </motion.a>
           </motion.div>
         </motion.div>
