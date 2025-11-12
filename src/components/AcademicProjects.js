@@ -60,7 +60,10 @@ const AcademicProjects = () => {
       detailedDescription: "High-pressure case competition requiring rapid analysis and strategic thinking to solve complex business challenges for a global shipping giant.",
       tools: ["Strategic Analysis", "Data Analytics", "Presentation Skills", "Business Intelligence"],
       university: "University of Washington",
-      program: "Business Analytics June 2024 - June 2025"
+      program: "Business Analytics June 2024 - June 2025",
+      links: [
+        { type: "Case Report", url: "https://drive.google.com/file/d/1AY35kFh04BleJk48OMjwpg8D1U6WQwE1/view?usp=drive_link" }
+      ]
     },
     {
       id: 6,
@@ -69,10 +72,7 @@ const AcademicProjects = () => {
       detailedDescription: "Comprehensive analysis of pricing strategies and demand patterns in the consumer goods industry using advanced statistical techniques.",
       tools: ["R", "Log-Linear Regression", "ROI Modeling", "PCA", "Excel Simulation"],
       university: "University of Washington",
-      program: "Business Analytics June 2024 - June 2025",
-      links: [
-        { type: "Project Report", url: "https://drive.google.com/file/d/1Jiv4JDKEN1QRN_YsD59zGgBlvy7Mhb9x/view?usp=drive_link" }
-      ]
+      program: "Business Analytics June 2024 - June 2025"
     },
     {
       id: 7,
