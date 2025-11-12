@@ -98,7 +98,7 @@ const Contact = () => {
           variants={itemVariants}
           style={{
             fontSize: '1.2rem',
-            color: '#666',
+            color: '#e0e0e0',
             marginBottom: '3rem',
             maxWidth: '600px',
             margin: '0 auto 3rem auto',

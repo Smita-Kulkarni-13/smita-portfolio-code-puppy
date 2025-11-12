@@ -14,9 +14,9 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #000000;
   min-height: 100vh;
-  color: #333;
+  color: #ffffff;
   overflow-x: hidden;
 }
 
@@ -325,8 +325,8 @@ section {
 .footer {
   text-align: center;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
 }
 
 /* Section Titles */

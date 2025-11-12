@@ -134,7 +134,7 @@ const Hero = () => {
             fontSize: 'clamp(1.2rem, 3vw, 1.8rem)',
             fontWeight: 400,
             marginBottom: '2rem',
-            color: '#555',
+            color: '#e0e0e0',
             lineHeight: 1.4,
             maxWidth: '900px',
             margin: '0 auto 3rem auto'
@@ -207,7 +207,7 @@ const Hero = () => {
             justifyContent: 'center',
             flexWrap: 'wrap',
             fontSize: '1.1rem',
-            color: '#666'
+            color: '#e0e0e0'
           }}
         >
           <motion.a
@@ -215,12 +215,13 @@ const Hero = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             style={{
-              color: '#667eea',
+              color: '#ffffff',
               textDecoration: 'none',
               fontWeight: '500',
               display: 'flex',
               alignItems: 'center',
-              gap: '0.5rem'
+              gap: '0.5rem',
+              borderBottom: '1px solid rgba(255, 255, 255, 0.3)'
             }}
           >
             <span>✉️</span> smitask244@gmail.com
