@@ -245,6 +245,35 @@ const Hero = () => {
             <span>💼</span> LinkedIn
           </motion.a>
         </motion.div>
+
+        {/* AI Build Notice */}
+        <motion.div
+          variants={itemVariants}
+          style={{
+            marginTop: '2rem',
+            padding: '1rem 1.5rem',
+            background: 'rgba(255, 255, 255, 0.05)',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            borderRadius: '15px',
+            backdropFilter: 'blur(10px)'
+          }}
+        >
+          <motion.p
+            style={{
+              fontSize: '0.9rem',
+              color: '#e0e0e0',
+              textAlign: 'center',
+              margin: 0,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '0.5rem'
+            }}
+          >
+            <span>🐶</span>
+            <span>Built with agentic AI in 30 minutes</span>
+          </motion.p>
+        </motion.div>
       </motion.div>
 
       {/* Scroll Indicator */}
