@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 const WorkExperience = () => {
   const experiences = [
@@ -56,28 +55,6 @@ const WorkExperience = () => {
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut"
-      }
-    }
-  };
-
   return (
     <section
       id="work"
@@ -91,319 +68,293 @@ const WorkExperience = () => {
         maxWidth: '1200px'
       }}
     >
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={containerVariants}
+      {/* Section Title */}
+      <h2
+        style={{
+          fontSize: '3rem',
+          fontWeight: 800,
+          textAlign: 'center',
+          marginBottom: '3rem',
+          background: 'linear-gradient(135deg, #667eea, #764ba2)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text',
+          color: '#333'
+        }}
       >
-        {/* Section Title */}
-        <motion.h2
-          variants={itemVariants}
-          className="section-title"
+        Work Experience
+      </h2>
+
+      {/* Experience Cards */}
+      {experiences.map((experience, index) => (
+        <div
+          key={index}
+          className="experience-card"
           style={{
-            fontSize: '3rem',
-            fontWeight: 800,
-            textAlign: 'center',
-            marginBottom: '3rem',
-            background: 'linear-gradient(135deg, #667eea, #764ba2)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text'
+            background: 'white',
+            borderRadius: '15px',
+            padding: '3rem',
+            marginBottom: '2rem',
+            boxShadow: '0 10px 40px rgba(0, 0, 0, 0.05)',
+            borderLeft: '4px solid #667eea',
+            transition: 'all 0.3s ease'
           }}
         >
-          Work Experience
-        </motion.h2>
-
-        {/* Experience Cards */}
-        {experiences.map((experience, index) => (
-          <motion.div
-            key={index}
-            variants={itemVariants}
-            className="experience-card"
-            style={{
-              background: 'white',
-              borderRadius: '15px',
-              padding: '3rem',
-              marginBottom: '2rem',
-              boxShadow: '0 10px 40px rgba(0, 0, 0, 0.05)',
-              borderLeft: '4px solid #667eea',
-              transition: 'all 0.3s ease'
-            }}
-            whileHover={{
-              y: -5,
-              boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)'
-            }}
-          >
-            {/* Header */}
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'start',
-                marginBottom: '2rem',
-                flexWrap: 'wrap'
-              }}
-            >
-              <div>
-                <h3
-                  style={{
-                    fontSize: '2rem',
-                    fontWeight: 700,
-                    color: '#333',
-                    marginBottom: '0.5rem'
-                  }}
-                >
-                  {experience.company}
-                </h3>
-                <div
-                  style={{
-                    fontSize: '1.2rem',
-                    color: '#667eea',
-                    fontWeight: 600,
-                    marginBottom: '0.5rem'
-                  }}
-                >
-                  {experience.position}
-                </div>
-                {experience.location && (
-                  <div
-                    style={{
-                      fontSize: '1rem',
-                      color: '#666',
-                      marginBottom: '0.5rem'
-                    }}
-                  >
-                    📍 {experience.location}
-                  </div>
-                )}
-              </div>
-              <div
-                style={{
-                  color: '#666',
-                  fontWeight: 500,
-                  fontSize: '1.1rem'
-                }}
-              >
-                {experience.duration}
-              </div>
-            </div>
-
-            {/* Client Information (if available) */}
-            {experience.clients && (
-              <div
-                style={{
-                  fontFamily: 'italic',
-                  color: '#666',
-                  marginBottom: '1.5rem',
-                  padding: '1rem',
-                  background: 'rgba(102, 126, 234, 0.05)',
-                  borderRadius: '8px',
-                  borderLeft: '3px solid #667eea'
-                }}
-              >
-                <strong>Clients:</strong> {experience.clients.join(', ')}
-              </div>
-            )}
-
-            {/* Achievements */}
-            <div className="achievements-section">
-              <h4
-                style={{
-                  fontSize: '1.3rem',
-                  fontWeight: 600,
-                  color: '#333',
-                  marginBottom: '1.5rem'
-                }}
-              >
-                Key Achievements
-              </h4>
-              <ul
-                style={{
-                  listStyle: 'none',
-                  padding: 0,
-                  margin: 0
-                }}
-              >
-                {experience.achievements.map((achievement, achievementIndex) => (
-                  <motion.li
-                    key={achievementIndex}
-                    variants={itemVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.8 }}
-                    custom={achievementIndex}
-                    whileHover={{
-                      x: 10,
-                      color: '#667eea'
-                    }}
-                    style={{
-                      position: 'relative',
-                      paddingLeft: '2rem',
-                      marginBottom: '1.2rem',
-                      lineHeight: 1.6,
-                      color: '#555',
-                      transition: 'all 0.3s ease'
-                    }}
-                  >
-                    <span
-                      style={{
-                        position: 'absolute',
-                        left: 0,
-                        color: '#667eea',
-                        fontWeight: 'bold',
-                        fontSize: '1.2rem'
-                      }}
-                    >
-                      →
-                    </span>
-                    {achievement}
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Skills */}
-            {experience.skills && (
-              <div
-                style={{
-                  marginTop: '2rem',
-                  paddingTop: '1.5rem',
-                  borderTop: '1px solid #eee'
-                }}
-              >
-                <h4
-                  style={{
-                    fontSize: '1.1rem',
-                    fontWeight: 600,
-                    color: '#333',
-                    marginBottom: '1rem'
-                  }}
-                >
-                  Technologies & Skills
-                </h4>
-                <div
-                  style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    gap: '0.5rem'
-                  }}
-                >
-                  {experience.skills.map((skill) => (
-                    <motion.span
-                      key={skill}
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      style={{
-                        padding: '0.3rem 0.8rem',
-                        background: 'linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1))',
-                        border: '1px solid rgba(102, 126, 234, 0.3)',
-                        borderRadius: '15px',
-                        fontSize: '0.85rem',
-                        color: '#667eea',
-                        fontWeight: '500'
-                      }}
-                    >
-                      {skill}
-                    </motion.span>
-                  ))}
-                </div>
-              </div>
-            )}
-          </motion.div>
-        ))}
-
-        {/* Overall Skills Highlight */}
-        <motion.div
-          variants={itemVariants}
-          style={{
-            textAlign: 'center',
-            marginTop: '3rem',
-            padding: '2rem',
-            background: 'linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1))',
-            borderRadius: '15px'
-          }}
-        >
-          <h4
-            style={{
-              fontSize: '1.5rem',
-              fontWeight: 600,
-              marginBottom: '2rem',
-              color: '#333'
-            }}
-          >
-            Expertise Summary
-          </h4>
+          {/* Header */}
           <div
             style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-              gap: '2rem'
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'start',
+              marginBottom: '2rem',
+              flexWrap: 'wrap'
             }}
           >
-            <motion.div whileHover={{ scale: 1.05 }}>
-              <div
+            <div>
+              <h3
                 style={{
-                  fontSize: '2.5rem',
-                  fontWeight: 800,
-                  color: '#667eea',
+                  fontSize: '2rem',
+                  fontWeight: 700,
+                  color: '#333',
                   marginBottom: '0.5rem'
                 }}
               >
-                4+
-              </div>
+                {experience.company}
+              </h3>
               <div
                 style={{
-                  color: '#666',
-                  fontWeight: '500'
-                }}
-              >
-                Companies
-              </div>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }}>
-              <div
-                style={{
-                  fontSize: '2.5rem',
-                  fontWeight: 800,
+                  fontSize: '1.2rem',
                   color: '#667eea',
+                  fontWeight: 600,
                   marginBottom: '0.5rem'
                 }}
               >
-                5+ yrs
+                {experience.position}
               </div>
-              <div
-                style={{
-                  color: '#666',
-                  fontWeight: '500'
-                }}
-              >
-                Experience
-              </div>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }}>
-              <div
-                style={{
-                  fontSize: '2.5rem',
-                  fontWeight: 800,
-                  color: '#667eea',
-                  marginBottom: '0.5rem'
-                }}
-              >
-                20+
-              </div>
-              <div
-                style={{
-                  color: '#666',
-                  fontWeight: '500'
-                }}
-              >
-                Technologies
-              </div>
-            </motion.div>
+              {experience.location && (
+                <div
+                  style={{
+                    fontSize: '1rem',
+                    color: '#666',
+                    marginBottom: '0.5rem'
+                  }}
+                >
+                  📍 {experience.location}
+                </div>
+              )}
+            </div>
+            <div
+              style={{
+                color: '#666',
+                fontWeight: 500,
+                fontSize: '1.1rem'
+              }}
+            >
+              {experience.duration}
+            </div>
           </div>
-        </motion.div>
-      </motion.div>
+
+          {/* Client Information (if available) */}
+          {experience.clients && (
+            <div
+              style={{
+                fontFamily: 'italic',
+                color: '#666',
+                marginBottom: '1.5rem',
+                padding: '1rem',
+                background: 'rgba(102, 126, 234, 0.05)',
+                borderRadius: '8px',
+                borderLeft: '3px solid #667eea'
+              }}
+            >
+              <strong>Clients:</strong> {experience.clients.join(', ')}
+            </div>
+          )}
+
+          {/* Achievements */}
+          <div className="achievements-section">
+            <h4
+              style={{
+                fontSize: '1.3rem',
+                fontWeight: 600,
+                color: '#333',
+                marginBottom: '1.5rem'
+              }}
+            >
+              Key Achievements
+            </h4>
+            <ul
+              style={{
+                listStyle: 'none',
+                padding: 0,
+                margin: 0
+              }}
+            >
+              {experience.achievements.map((achievement, achievementIndex) => (
+                <li
+                  key={achievementIndex}
+                  style={{
+                    position: 'relative',
+                    paddingLeft: '2rem',
+                    marginBottom: '1.2rem',
+                    lineHeight: 1.6,
+                    color: '#555'
+                  }}
+                >
+                  <span
+                    style={{
+                      position: 'absolute',
+                      left: 0,
+                      color: '#667eea',
+                      fontWeight: 'bold',
+                      fontSize: '1.2rem'
+                    }}
+                  >
+                    →
+                  </span>
+                  {achievement}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Skills */}
+          {experience.skills && (
+            <div
+              style={{
+                marginTop: '2rem',
+                paddingTop: '1.5rem',
+                borderTop: '1px solid #eee'
+              }}
+            >
+              <h4
+                style={{
+                  fontSize: '1.1rem',
+                  fontWeight: 600,
+                  color: '#333',
+                  marginBottom: '1rem'
+                }}
+              >
+                Technologies & Skills
+              </h4>
+              <div
+                style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: '0.5rem'
+                }}
+              >
+                {experience.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    style={{
+                      padding: '0.3rem 0.8rem',
+                      background: 'linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1))',
+                      border: '1px solid rgba(102, 126, 234, 0.3)',
+                      borderRadius: '15px',
+                      fontSize: '0.85rem',
+                      color: '#667eea',
+                      fontWeight: '500'
+                    }}
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      ))}
+
+      {/* Overall Skills Highlight */}
+      <div
+        style={{
+          textAlign: 'center',
+          marginTop: '3rem',
+          padding: '2rem',
+          background: 'linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1))',
+          borderRadius: '15px'
+        }}
+      >
+        <h4
+          style={{
+            fontSize: '1.5rem',
+            fontWeight: 600,
+            marginBottom: '2rem',
+            color: '#333'
+          }}
+        >
+          Expertise Summary
+        </h4>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '2rem'
+          }}
+        >
+          <div>
+            <div
+              style={{
+                fontSize: '2.5rem',
+                fontWeight: 800,
+                color: '#667eea',
+                marginBottom: '0.5rem'
+              }}
+            >
+              4+
+            </div>
+            <div
+              style={{
+                color: '#666',
+                fontWeight: '500'
+              }}
+            >
+              Companies
+            </div>
+          </div>
+          <div>
+            <div
+              style={{
+                fontSize: '2.5rem',
+                fontWeight: 800,
+                color: '#667eea',
+                marginBottom: '0.5rem'
+              }}
+            >
+              5+ yrs
+            </div>
+            <div
+              style={{
+                color: '#666',
+                fontWeight: '500'
+              }}
+            >
+              Experience
+            </div>
+          </div>
+          <div>
+            <div
+              style={{
+                fontSize: '2.5rem',
+                fontWeight: 800,
+                color: '#667eea',
+                marginBottom: '0.5rem'
+              }}
+            >
+              20+
+            </div>
+            <div
+              style={{
+                color: '#666',
+                fontWeight: '500'
+              }}
+            >
+              Technologies
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
