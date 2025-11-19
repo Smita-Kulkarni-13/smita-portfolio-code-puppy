@@ -1,6 +1,7 @@
 import React from 'react';
 
 const WorkExperience = () => {
+  console.log('WorkExperience component is building!');
   const experiences = [
     {
       company: "Wal-Mart",

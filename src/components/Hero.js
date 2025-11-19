@@ -154,6 +154,29 @@ const Hero = () => {
             marginBottom: '3rem'
           }}
         >
+          <motion.a
+            href="https://drive.google.com/file/d/1AY35kFh04BleJk48OMjwpg8D1U6WQwE1/view?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            style={{
+              padding: '1rem 2rem',
+              fontSize: '1.1rem',
+              fontWeight: '600',
+              border: 'none',
+              borderRadius: '50px',
+              background: 'linear-gradient(135deg, #667eea, #764ba2)',
+              color: 'white',
+              cursor: 'pointer',
+              textDecoration: 'none',
+              display: 'inline-block',
+              boxShadow: '0 10px 30px rgba(102, 126, 234, 0.3)'
+            }}
+          >
+            📄 View Resume
+          </motion.a>
+
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -165,12 +188,11 @@ const Hero = () => {
               padding: '1rem 2rem',
               fontSize: '1.1rem',
               fontWeight: '600',
-              border: 'none',
+              border: '2px solid #667eea',
               borderRadius: '50px',
-              background: 'linear-gradient(135deg, #667eea, #764ba2)',
-              color: 'white',
-              cursor: 'pointer',
-              boxShadow: '0 10px 30px rgba(102, 126, 234, 0.3)'
+              background: 'transparent',
+              color: '#667eea',
+              cursor: 'pointer'
             }}
           >
             View My Work
